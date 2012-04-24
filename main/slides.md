@@ -25,22 +25,22 @@
 # Spring 3.1
 
 !SLIDE incremental bullets
-# Major Themes
-* First-class environment support
-* Code-based configuration
-* New cache abstraction
+# major themes
+* first-class environment support
+* code-based configuration
+* new cache abstraction
 * @MVC improvements
-* Third-party library and specification support
+* third-party library and specification support
 
 !SLIDE subsection
-# Environment Support
+# Environment support
 
 !SLIDE
 # `Environment` API
 
 !SLIDE incremental bullets
 # `Environment` API
-* Injectable environment abstraction
+* injectable environment abstraction
 * `org.springframework.core.env.Environment`
 
 !SLIDE incremental bullets
@@ -1237,7 +1237,7 @@
 * new `orm.hibernate4` packaging
 
 !SLIDE smaller
-# Familiar?
+# familiar?
     @@@ xml
     <bean id="sessionFactory"
         class="org.sfwk.orm.hibernate3.LocalSessionFactoryBean">
@@ -1256,7 +1256,7 @@
     </bean>
 
 !SLIDE smaller
-# Or even
+# or even
     @@@ xml
     <bean id="sessionFactory"
         class="org.sfwk.orm.hib3.AnnotationSessionFactoryBean">
@@ -1288,11 +1288,11 @@
 
 !SLIDE incremental bullets
 # `LocalSessionFactoryBuilder`
-* Extends Hibernate&apos;s own `Configuration` class
+* extends Hibernate&apos;s own `Configuration` class
 * only in the new `orm.hibernate4` package
 
 !SLIDE smaller
-# Also...
+# also...
 
 !SLIDE smaller
 # standalone Hibernate exception translator
@@ -1394,7 +1394,7 @@
 # out-of-the-box implementations for
 * Ehcache
 * Concurrent map (in-memory)
-* Any provider can be plugged in
+* any provider can be plugged in
 * GemFire, Coherence, etc.
 * JCache support in Spring 3.2
 
@@ -1427,8 +1427,8 @@
 
 !SLIDE bullets
 # Servlet 3.0
-* As discussed earlier
-* Primarily focused on config
+* as discussed earlier
+* primarily focused on config
 * Spring 3.2 will focus on async use cases
 
 !SLIDE bullets
@@ -1460,7 +1460,78 @@
 # `c:` namespace
 * equivalent to `p:` namespace (around since Spring 2.0)
 
+!SLIDE smaller bullets
+# a typical component
+    @@@ java
+    package com.company;
 
+    public class Baz {
+
+        private final Foo foo;
+        private Bar bar;
+
+        public Baz(Foo foo) {
+                this.foo = foo;
+        }
+
+        public setBar(Bar bar) {
+            this.bar = bar;
+        }
+    }
+
+!SLIDE smaller bullets
+# and it&apos;s typical config
+    @@@ xml
+    <beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+
+        ...>
+
+      <bean id="foo" class="com.company.Foo">
+      <bean id="bar" class="com.company.Bar">
+
+      <bean name="baz" class="com.company.Baz">
+          <constructor-arg ref="foo"/>
+          <property name="bar" ref="bar"/>
+      </bean>
+    </beans>
+
+!SLIDE smaller bullets transition=fade
+# ... with p: namespace
+    @@@ xml
+    <beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:p="http://www.springframework.org/schema/p"
+
+        ...>
+
+      <bean id="foo" class="com.company.Foo">
+      <bean id="bar" class="com.company.Bar">
+
+      <bean name="baz" class="com.company.Baz" p:bar-ref="bar">
+          <constructor-arg ref="foo"/>
+
+      </bean>
+    </beans>
+
+!SLIDE smaller bullets transition=fade
+# ... with c: namespace
+    @@@ xml
+    <beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:p="http://www.springframework.org/schema/p"
+      xmlns:c="http://www.springframework.org/schema/c"
+        ...>
+
+      <bean id="foo" class="com.company.Foo">
+      <bean id="bar" class="com.company.Bar">
+
+      <bean name="baz" class="com.company.Baz" p:bar-ref="bar"
+          c:foo-ref="foo"/>
+
+
+    </beans>
 
 !SLIDE subsection
 # Spring 3.2
@@ -1506,13 +1577,13 @@
 * _every_ active Spring project has made the move
 
 !SLIDE incremental bullets
-# New build system
+# new build system
 
 !SLIDE incremental bullets
-# New build system
-* From Ant/Ivy to [Gradle][]
-* Used to take a whole [blog post][] to explain
-* Now just one command
+# new build system
+* from Ant/Ivy to [Gradle][]
+* used to take a whole [blog post][] to explain
+* now just one command
 
 [Gradle]: http://gradle.org
 [blog post]: http://blog.springsource.org/2009/03/03/building-spring-3
@@ -1540,12 +1611,12 @@
 [STS Gradle tooling tutorial](http://static.springsource.org/sts/docs/latest/reference/html/gradle/gradle-sts-tutorial.html)
 
 !SLIDE incremental bullets
-# New build system
-* Great for core developers
-* But also great for the community!
+# new build system
+* great for core developers
+* but also great for the community!
 
 !SLIDE incremental bullets
-# Simple build
+# simple build
 # +
 # GitHub pull requests
 * = contributions welcome
@@ -1557,7 +1628,7 @@
 * current list of [pull requests](https://github.com/SpringSource/spring-framework/pulls)
 
 !SLIDE
-# Unified artifact management
+# unified artifact management
 
 !SLIDE incremental bullets
 # [http://repo.springsource.org](http://repo.springsource.org)
@@ -1586,15 +1657,15 @@
 
 !SLIDE incremental bullets
 # Asynchronous request processing
-* Support in @MVC for Servlet 3.0/3.1 async
-* May also incorporate Web Sockets
-* Stay tuned to [blog.springsource.com](http://blog.springsource.com)
-* Feedback please!
+* support in @MVC for Servlet 3.0/3.1 async
+* may also incorporate Web Sockets
+* stay tuned to [blog.springsource.com](http://blog.springsource.com)
+* feedback please!
 
 !SLIDE bullets
 # Asynchronous request processing
-* Sneak preview: [spring-mvc-async-sample](https://github.com/rstoyanchev/spring-mvc-async-sample)
-* Follow [SPR-8517](https://jira.springsource.org/browse/SPR-8517)
+* sneak preview: [spring-mvc-async-sample](https://github.com/rstoyanchev/spring-mvc-async-sample)
+* follow [SPR-8517](https://jira.springsource.org/browse/SPR-8517)
 
 !SLIDE subsection
 # Third-party libs and spec support
@@ -1612,9 +1683,9 @@
 
 !SLIDE bullets incremental
 # Ease of use
-* Migrate away from CGLIB ([SPR-8190](https://jira.springsource.org/browse/SPR-8190))
-* Logging improvements ([SPR-8122](https://jira.springsource.org/browse/SPR-8122))
-* Error-reporting improvements ([SPR-8204](https://jira.springsource.org/browse/SPR-8204))
+* migrate away from CGLIB ([SPR-8190](https://jira.springsource.org/browse/SPR-8190))
+* logging improvements ([SPR-8122](https://jira.springsource.org/browse/SPR-8122))
+* error-reporting improvements ([SPR-8204](https://jira.springsource.org/browse/SPR-8204))
 
 !SLIDE subsection incremental bullets
 # Roadmap
