@@ -114,19 +114,19 @@
 <h1>Spring 3.1</h1>
 </div>
 </div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/8">
-<h1>Major Themes</h1>
+<h1>major themes</h1>
 
 <ul>
-<li>First-class environment support</li>
-<li>Code-based configuration</li>
-<li>New cache abstraction</li>
+<li>first-class environment support</li>
+<li>code-based configuration</li>
+<li>new cache abstraction</li>
 <li>@MVC improvements</li>
-<li>Third-party library and specification support</li>
+<li>third-party library and specification support</li>
 </ul>
 
 </div>
 </div><div class="slide" data-transition="none"><div class="content subsection" ref="main/slides/9">
-<h1>Environment Support</h1>
+<h1>Environment support</h1>
 </div>
 </div><div class="slide" data-transition="none"><div class="content" ref="main/slides/10">
 <h1><code>Environment</code> API</h1>
@@ -135,8 +135,8 @@
 <h1><code>Environment</code> API</h1>
 
 <ul>
-<li>Injectable environment abstraction</li>
-<li><code>org.springframework.core.env.Environment</code></li>
+<li>injectable environment abstraction</li>
+<li><a href="http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/core/env/Environment.html"><code>org.springframework.core.env.Environment</code></a></li>
 </ul>
 
 </div>
@@ -151,7 +151,7 @@
 
 </div>
 </div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/13">
-<h1><code>PropertySource</code> API</h1>
+<h1><a href="http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/core/env/PropertySource.html"><code>PropertySource</code></a> API</h1>
 
 <ul>
 <li>abstraction for any source of key/value pairs</li>
@@ -172,7 +172,7 @@
 
 </div>
 </div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/15">
-<h1><code>StandardEnvironment</code></h1>
+<h1><a href="http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/core/env/StandardEnvironment.html"><code>StandardEnvironment</code></a></h1>
 
 <ul>
 <li>includes by default <code>PropertySources</code> for:</li>
@@ -183,7 +183,7 @@
 
 </div>
 </div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/16">
-<h1><code>Standard</code><em><code>Servlet</code></em><code>Environment</code></h1>
+<h1><a href="http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/web/context/support/StandardServletEnvironment.html"><code>Standard</code><em><code>Servlet</code></em><code>Environment</code></a></h1>
 
 <ul>
 <li>includes by default <code>PropertySources</code> for:</li>
@@ -201,24 +201,24 @@
 <li>All Spring <code>ApplicationContext</code> types now contain an <code>Environment</code></li>
 <li>You can create and register your own <code>Environment</code></li>
 <li>And/or customize with your own <code>PropertySources</code></li>
-<li>Using <code>ConfigurableEnvironment</code> API</li>
-<li>or with <code>@PropertySource</code> annotation</li>
+<li>Using <a href="http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/core/env/ConfigurableEnvironment.html"><code>ConfigurableEnvironment</code></a> API</li>
+<li>or with <a href="http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/context/annotation/PropertySource.html"><code>@PropertySource</code></a> annotation</li>
 </ul>
 
 </div>
 </div><div class="slide" data-transition="none"><div class="content smaller incremental bullets" ref="main/slides/18">
-<h1><code>PropertySourcesPlaceholderResolver</code></h1>
+<h1><a href="http://static.springsource.org/spring-framework/docs/3.1.x/javadoc-api/org/springframework/context/support/PropertySourcesPlaceholderConfigurer.html"><code>PropertySourcesPlaceholderConfigurer</code></a></h1>
 
 <ul>
 <li>new in <code>3.1</code></li>
-<li>supersedes <code>PropertyPlaceholderResolver</code></li>
+<li>supersedes <code>PropertyPlaceholderConfigurer</code></li>
 <li>automatically resolves <code>${...}</code> placeholders via the <code>Environment</code></li>
 <li>used by default with <code>&lt;context:property-placeholder/&gt;</code></li>
 </ul>
 
 </div>
 </div><div class="slide" data-transition="none"><div class="content smaller" ref="main/slides/19">
-<h1><code>PropertySourcesPlaceholderResolver</code></h1>
+<h1><code>PropertySourcesPlaceholderConfigurer</code></h1>
 
 <pre class="sh_xml"><code>&lt;beans ...&gt;
   &lt;context:property-placeholder
@@ -236,7 +236,7 @@
 &lt;/beans&gt;</code></pre>
 </div>
 </div><div class="slide" data-transition="none"><div class="content smaller" ref="main/slides/20">
-<h1><code>PropertySourcesPlaceholderResolver</code></h1>
+<h1><code>PropertySourcesPlaceholderConfigurer</code></h1>
 
 <pre class="sh_xml"><code>&lt;beans ...&gt;
   &lt;context:property-placeholder
@@ -1072,14 +1072,14 @@ public class AppConfig {
 </div>
 </div><div class="slide" data-transition="none"><div class="content small bullets" ref="main/slides/75">
 <ul>
-<li><code>@ComponentScan</code></li>
-<li><code>@EnableAspectJAutoProxy</code></li>
-<li><code>@EnableAsync</code></li>
-<li><code>@EnableCaching</code></li>
-<li><code>@EnableLoadTimeWeaving</code></li>
-<li><code>@EnableSpringConfigured</code></li>
-<li><code>@EnableTransactionManagement</code></li>
-<li><code>@EnableWebMvc</code></li>
+<li><a href="http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/context/annotation/ComponentScan.html"><code>@ComponentScan</code></a></li>
+<li><a href="http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/context/annotation/EnableAspectJAutoProxy.html"><code>@EnableAspectJAutoProxy</code></a></li>
+<li><a href="http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/scheduling/annotation/EnableAsync.html"><code>@EnableAsync</code></a></li>
+<li><a href="http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/annotation/EnableCaching.html"><code>@EnableCaching</code></a></li>
+<li><a href="http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/context/annotation/EnableLoadTimeWeaving.html"><code>@EnableLoadTimeWeaving</code></a></li>
+<li><a href="http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/beans/factory/aspectj/EnableSpringConfigured.html"><code>@EnableSpringConfigured</code></a></li>
+<li><a href="http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/transaction/annotation/EnableTransactionManagement.html"><code>@EnableTransactionManagement</code></a></li>
+<li><a href="http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/web/servlet/config/annotation/EnableWebMvc.html"><code>@EnableWebMvc</code></a></li>
 </ul>
 
 </div>
@@ -1234,7 +1234,7 @@ public class IntegrationTest {
 <h1>XML-free servlet container configuration</h1>
 </div>
 </div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/91">
-<h1><code>WebApplicationInitializer</code></h1>
+<h1><a href="http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/web/WebApplicationInitializer.html"><code>WebApplicationInitializer</code></a></h1>
 
 <ul>
 <li>Spring 3.1 introduces <code>WebApplicationInitializer</code> API</li>
@@ -1385,7 +1385,7 @@ public LocalContainerEntityManagerFactoryBean emf() {
 
 </div>
 </div><div class="slide" data-transition="none"><div class="content smaller" ref="main/slides/103">
-<h1>Familiar?</h1>
+<h1>familiar?</h1>
 
 <pre class="sh_xml"><code>&lt;bean id="sessionFactory"
     class="org.sfwk.orm.hibernate3.LocalSessionFactoryBean"&gt;
@@ -1404,7 +1404,7 @@ public LocalContainerEntityManagerFactoryBean emf() {
 &lt;/bean&gt;</code></pre>
 </div>
 </div><div class="slide" data-transition="none"><div class="content smaller" ref="main/slides/104">
-<h1>Or even</h1>
+<h1>or even</h1>
 
 <pre class="sh_xml"><code>&lt;bean id="sessionFactory"
     class="org.sfwk.orm.hib3.AnnotationSessionFactoryBean"&gt;
@@ -1434,16 +1434,16 @@ public SessionFactory sessionFactory() {
 }</code></pre>
 </div>
 </div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/107">
-<h1><code>LocalSessionFactoryBuilder</code></h1>
+<h1><a href="http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/orm/hibernate4/LocalSessionFactoryBuilder.html"><code>LocalSessionFactoryBuilder</code></a></h1>
 
 <ul>
-<li>Extends Hibernate's own <code>Configuration</code> class</li>
+<li>extends Hibernate's own <code>Configuration</code> class</li>
 <li>only in the new <code>orm.hibernate4</code> package</li>
 </ul>
 
 </div>
 </div><div class="slide" data-transition="none"><div class="content smaller" ref="main/slides/108">
-<h1>Also...</h1>
+<h1>also...</h1>
 </div>
 </div><div class="slide" data-transition="none"><div class="content smaller" ref="main/slides/109">
 <h1>standalone Hibernate exception translator</h1>
@@ -1503,8 +1503,8 @@ public PersistenceExceptionTranslator exTranslator() {
 <h1>key annotations</h1>
 
 <ul>
-<li><code>@Cacheable</code></li>
-<li><code>@CacheEvict</code></li>
+<li><a href="http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/annotation/Cacheable.html"><code>@Cacheable</code></a></li>
+<li><a href="http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/annotation/CacheEvict.html"><code>@CacheEvict</code></a></li>
 </ul>
 
 </div>
@@ -1520,7 +1520,7 @@ public void loadBooks(InputStream batch) {
 }</code></pre>
 </div>
 </div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/117">
-<h1><code>Cache</code> and <code>CacheManager</code> SPI</h1>
+<h1><a href="http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/CacheManager.html"><code>Cache</code></a> and <a href="http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/Cache.html"><code>CacheManager</code></a> SPI</h1>
 
 <ul>
 <li>in new <code>org.springframework.cache</code> package</li>
@@ -1532,7 +1532,7 @@ public void loadBooks(InputStream batch) {
 
 <ul>
 <li>with new <code>&lt;cache:*&gt;</code> XML namespace</li>
-<li>or new <code>@EnableCaching</code> annotation</li>
+<li>or new <a href="http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/annotation/EnableCaching.html"><code>@EnableCaching</code></a> annotation</li>
 </ul>
 
 </div>
@@ -1572,7 +1572,7 @@ class AppConfig {
 <ul>
 <li>Ehcache</li>
 <li>Concurrent map (in-memory)</li>
-<li>Any provider can be plugged in</li>
+<li>any provider can be plugged in</li>
 <li>GemFire, Coherence, etc.</li>
 <li>JCache support in Spring 3.2</li>
 </ul>
@@ -1612,8 +1612,8 @@ class AppConfig {
 <h1>Servlet 3.0</h1>
 
 <ul>
-<li>As discussed earlier</li>
-<li>Primarily focused on config</li>
+<li>as discussed earlier</li>
+<li>primarily focused on config</li>
 <li>Spring 3.2 will focus on async use cases</li>
 </ul>
 
@@ -1665,10 +1665,83 @@ class AppConfig {
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="main/slides/133">
+</div><div class="slide" data-transition="none"><div class="content smaller bullets" ref="main/slides/133">
+<h1>a typical component</h1>
+
+<pre class="sh_java"><code>package com.company;
+
+public class Baz {
+
+    private final Foo foo;
+    private Bar bar;
+
+    public Baz(Foo foo) {
+            this.foo = foo;
+    }
+
+    public setBar(Bar bar) {
+        this.bar = bar;
+    }
+}</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content smaller bullets" ref="main/slides/134">
+<h1>and it's typical config</h1>
+
+<pre class="sh_xml"><code>&lt;beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+
+    ...&gt;
+
+  &lt;bean id="foo" class="com.company.Foo"&gt;
+  &lt;bean id="bar" class="com.company.Bar"&gt;
+
+  &lt;bean name="baz" class="com.company.Baz"&gt;
+      &lt;constructor-arg ref="foo"/&gt;
+      &lt;property name="bar" ref="bar"/&gt;
+  &lt;/bean&gt;
+&lt;/beans&gt;</code></pre>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content smaller bullets" ref="main/slides/135">
+<h1>... with p: namespace</h1>
+
+<pre class="sh_xml"><code>&lt;beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:p="http://www.springframework.org/schema/p"
+
+    ...&gt;
+
+  &lt;bean id="foo" class="com.company.Foo"&gt;
+  &lt;bean id="bar" class="com.company.Bar"&gt;
+
+  &lt;bean name="baz" class="com.company.Baz" p:bar-ref="bar"&gt;
+      &lt;constructor-arg ref="foo"/&gt;
+
+  &lt;/bean&gt;
+&lt;/beans&gt;</code></pre>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content smaller bullets" ref="main/slides/136">
+<h1>... with c: namespace</h1>
+
+<pre class="sh_xml"><code>&lt;beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xmlns:c="http://www.springframework.org/schema/c"
+    ...&gt;
+
+  &lt;bean id="foo" class="com.company.Foo"&gt;
+  &lt;bean id="bar" class="com.company.Bar"&gt;
+
+  &lt;bean name="baz" class="com.company.Baz" p:bar-ref="bar"
+      c:foo-ref="foo"/&gt;
+
+
+&lt;/beans&gt;</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="main/slides/137">
 <h1>Spring 3.2</h1>
 </div>
-</div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/134">
+</div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/138">
 <h1>Major Themes</h1>
 
 <ul>
@@ -1679,13 +1752,13 @@ class AppConfig {
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content small subsection" ref="main/slides/135">
+</div><div class="slide" data-transition="none"><div class="content small subsection" ref="main/slides/139">
 <h1>project infrastructure improvements</h1>
 </div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="main/slides/136">
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="main/slides/140">
 <h1>a.k.a. "Spring Cleaning"</h1>
 </div>
-</div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/137">
+</div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/141">
 <h1>Spring Cleaning</h1>
 
 <ul>
@@ -1696,13 +1769,13 @@ class AppConfig {
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content" ref="main/slides/138">
+</div><div class="slide" data-transition="none"><div class="content" ref="main/slides/142">
 <h1>All sources now on GitHub</h1>
 </div>
-</div><div class="slide" data-transition="fade"><div class="content center" ref="main/slides/139">
+</div><div class="slide" data-transition="fade"><div class="content center" ref="main/slides/143">
 <p><img src="./file/main/github.png" alt="github.png"/></p>
 </div>
-</div><div class="slide" data-transition="fade"><div class="content incremental bullets" ref="main/slides/140">
+</div><div class="slide" data-transition="fade"><div class="content incremental bullets" ref="main/slides/144">
 <h1>All sources now on GitHub</h1>
 
 <ul>
@@ -1710,7 +1783,7 @@ class AppConfig {
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content smaller incremental bullets" ref="main/slides/141">
+</div><div class="slide" data-transition="none"><div class="content smaller incremental bullets" ref="main/slides/145">
 <ul>
 <li>spring-framework</li>
 <li>spring-batch</li>
@@ -1722,20 +1795,20 @@ class AppConfig {
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/142">
-<h1>New build system</h1>
+</div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/146">
+<h1>new build system</h1>
 </div>
-</div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/143">
-<h1>New build system</h1>
+</div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/147">
+<h1>new build system</h1>
 
 <ul>
-<li>From Ant/Ivy to <a href="http://gradle.org">Gradle</a></li>
-<li>Used to take a whole <a href="http://blog.springsource.org/2009/03/03/building-spring-3">blog post</a> to explain</li>
-<li>Now just one command</li>
+<li>from Ant/Ivy to <a href="http://gradle.org">Gradle</a></li>
+<li>used to take a whole <a href="http://blog.springsource.org/2009/03/03/building-spring-3">blog post</a> to explain</li>
+<li>now just one command</li>
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content incremental commandline" ref="main/slides/144">
+</div><div class="slide" data-transition="none"><div class="content incremental commandline" ref="main/slides/148">
 <h1>checkout, build, test</h1>
 
 <pre><code><code class="command">$ git clone git@github.com/SpringSource/spring-framework.git</code>
@@ -1745,7 +1818,7 @@ class AppConfig {
 BUILD SUCCESSFUL
 </code></code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content incremental commandline" ref="main/slides/145">
+</div><div class="slide" data-transition="none"><div class="content incremental commandline" ref="main/slides/149">
 <h1>install jars to local m2 cache</h1>
 
 <pre><code><code class="command">$ ./gradlew install</code>
@@ -1753,27 +1826,27 @@ BUILD SUCCESSFUL
 BUILD SUCCESSFUL
 </code></code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content center incremental bullets" ref="main/slides/146">
+</div><div class="slide" data-transition="none"><div class="content center incremental bullets" ref="main/slides/150">
 <h1>STS and Gradle</h1>
 
 <p><img src="./file/main/sts-gradle.png" alt="sts-gradle.png"/></p>
 </div>
-</div><div class="slide" data-transition="none"><div class="content center incremental bullets" ref="main/slides/147">
+</div><div class="slide" data-transition="none"><div class="content center incremental bullets" ref="main/slides/151">
 <h1>STS and Gradle</h1>
 
 <p><a href="http://static.springsource.org/sts/docs/latest/reference/html/gradle/gradle-sts-tutorial.html">STS Gradle tooling tutorial</a></p>
 </div>
-</div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/148">
-<h1>New build system</h1>
+</div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/152">
+<h1>new build system</h1>
 
 <ul>
-<li>Great for core developers</li>
-<li>But also great for the community!</li>
+<li>great for core developers</li>
+<li>but also great for the community!</li>
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/149">
-<h1>Simple build</h1>
+</div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/153">
+<h1>simple build</h1>
 
 <h1>+</h1>
 
@@ -1784,7 +1857,7 @@ BUILD SUCCESSFUL
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/150">
+</div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/154">
 <h1>contributions welcome</h1>
 
 <ul>
@@ -1794,16 +1867,16 @@ BUILD SUCCESSFUL
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content" ref="main/slides/151">
-<h1>Unified artifact management</h1>
+</div><div class="slide" data-transition="none"><div class="content" ref="main/slides/155">
+<h1>unified artifact management</h1>
 </div>
-</div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/152">
+</div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/156">
 <h1><a href="http://repo.springsource.org">http://repo.springsource.org</a></h1>
 </div>
-</div><div class="slide" data-transition="fade"><div class="content center" ref="main/slides/153">
+</div><div class="slide" data-transition="fade"><div class="content center" ref="main/slides/157">
 <p><img src="./file/main/repo.png" alt="repo.png"/></p>
 </div>
-</div><div class="slide" data-transition="fade"><div class="content incremental bullets" ref="main/slides/154">
+</div><div class="slide" data-transition="fade"><div class="content incremental bullets" ref="main/slides/158">
 <h1>repo.springsource.org</h1>
 
 <ul>
@@ -1812,7 +1885,7 @@ BUILD SUCCESSFUL
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/155">
+</div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/159">
 <h1>repo.springsource.org</h1>
 
 <ul>
@@ -1821,39 +1894,39 @@ BUILD SUCCESSFUL
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content" ref="main/slides/156">
+</div><div class="slide" data-transition="none"><div class="content" ref="main/slides/160">
 <h1>New <a href="http://springsource.org">http://springsource.org</a></h1>
 </div>
-</div><div class="slide" data-transition="fade"><div class="content center" ref="main/slides/157">
+</div><div class="slide" data-transition="fade"><div class="content center" ref="main/slides/161">
 <p><img src="./file/main/dotorg.png" alt="dotorg.png"/></p>
 </div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="main/slides/158">
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="main/slides/162">
 <h1>Asynchronous request processing</h1>
 </div>
-</div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/159">
-<h1>Asynchronous request processing</h1>
-
-<ul>
-<li>Support in @MVC for Servlet 3.0/3.1 async</li>
-<li>May also incorporate Web Sockets</li>
-<li>Stay tuned to <a href="http://blog.springsource.com">blog.springsource.com</a></li>
-<li>Feedback please!</li>
-</ul>
-
-</div>
-</div><div class="slide" data-transition="none"><div class="content bullets" ref="main/slides/160">
+</div><div class="slide" data-transition="none"><div class="content incremental bullets" ref="main/slides/163">
 <h1>Asynchronous request processing</h1>
 
 <ul>
-<li>Sneak preview: <a href="https://github.com/rstoyanchev/spring-mvc-async-sample">spring-mvc-async-sample</a></li>
-<li>Follow <a href="https://jira.springsource.org/browse/SPR-8517">SPR-8517</a></li>
+<li>support in @MVC for Servlet 3.0/3.1 async</li>
+<li>may also incorporate Web Sockets</li>
+<li>stay tuned to <a href="http://blog.springsource.com">blog.springsource.com</a></li>
+<li>feedback please!</li>
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="main/slides/161">
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="main/slides/164">
+<h1>Asynchronous request processing</h1>
+
+<ul>
+<li>sneak preview: <a href="https://github.com/rstoyanchev/spring-mvc-async-sample">spring-mvc-async-sample</a></li>
+<li>follow <a href="https://jira.springsource.org/browse/SPR-8517">SPR-8517</a></li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="main/slides/165">
 <h1>Third-party libs and spec support</h1>
 </div>
-</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="main/slides/162">
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="main/slides/166">
 <h1>Third-party libs and spec support</h1>
 
 <ul>
@@ -1865,20 +1938,20 @@ BUILD SUCCESSFUL
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content subsection" ref="main/slides/163">
+</div><div class="slide" data-transition="none"><div class="content subsection" ref="main/slides/167">
 <h1>Ease of use</h1>
 </div>
-</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="main/slides/164">
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="main/slides/168">
 <h1>Ease of use</h1>
 
 <ul>
-<li>Migrate away from CGLIB (<a href="https://jira.springsource.org/browse/SPR-8190">SPR-8190</a>)</li>
-<li>Logging improvements (<a href="https://jira.springsource.org/browse/SPR-8122">SPR-8122</a>)</li>
-<li>Error-reporting improvements (<a href="https://jira.springsource.org/browse/SPR-8204">SPR-8204</a>)</li>
+<li>migrate away from CGLIB (<a href="https://jira.springsource.org/browse/SPR-8190">SPR-8190</a>)</li>
+<li>logging improvements (<a href="https://jira.springsource.org/browse/SPR-8122">SPR-8122</a>)</li>
+<li>error-reporting improvements (<a href="https://jira.springsource.org/browse/SPR-8204">SPR-8204</a>)</li>
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content subsection incremental bullets" ref="main/slides/165">
+</div><div class="slide" data-transition="none"><div class="content subsection incremental bullets" ref="main/slides/169">
 <h1>Roadmap</h1>
 
 <ul>
@@ -1888,7 +1961,7 @@ BUILD SUCCESSFUL
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content subsection bullets" ref="main/slides/166">
+</div><div class="slide" data-transition="none"><div class="content subsection bullets" ref="main/slides/170">
 <h1>Thanks! Questions?</h1>
 
 <ul>
