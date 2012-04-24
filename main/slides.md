@@ -41,7 +41,8 @@
 !SLIDE incremental bullets
 # `Environment` API
 * injectable environment abstraction
-* `org.springframework.core.env.Environment`
+* [`org.springframework.core.env.Environment`][1]
+[1]: http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/core/env/Environment.html
 
 !SLIDE incremental bullets
 # `Environment` API
@@ -50,7 +51,7 @@
 * _Bean Definition Profiles_
 
 !SLIDE incremental bullets
-# `PropertySource` API
+# [`PropertySource`][1] API
 * abstraction for any source of key/value pairs
 * `.properties` files
 * system properties
@@ -58,42 +59,54 @@
 * servlet context params
 * JNDI
 
+[1]: http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/core/env/PropertySource.html
+
 !SLIDE incremental bullets
 # `PropertySource` API
 * `Environment` maintains a hierarchy of `PropertySources`
 
 !SLIDE incremental bullets
-# `StandardEnvironment`
+# [`StandardEnvironment`][1]
 * includes by default `PropertySources` for:
 * JVM system properties (`-D` flags)
 * system environment variables
 * suitable for use in standalone (i.e. non-web) apps
 
+[1]: http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/core/env/StandardEnvironment.html
+
 !SLIDE incremental bullets
-# `Standard`*`Servlet`*`Environment`
+# [`Standard`*`Servlet`*`Environment`][1]
 * includes by default `PropertySources` for:
 * JVM system properties (`-D` flags)
 * system environment variables
 * servlet config and context params
 * JNDI
 
+[1]: http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/web/context/support/StandardServletEnvironment.html
+
 !SLIDE smaller incremental bullets
 # Putting the `Environment` to use
 * All Spring `ApplicationContext` types now contain an `Environment`
 * You can create and register your own `Environment`
 * And/or customize with your own `PropertySources`
-* Using `ConfigurableEnvironment` API
-* or with `@PropertySource` annotation
+* Using [`ConfigurableEnvironment`][1] API
+* or with [`@PropertySource`][2] annotation
+
+[1]: http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/core/env/ConfigurableEnvironment.html
+[2]: http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/context/annotation/PropertySource.html
 
 !SLIDE smaller incremental bullets
-# `PropertySourcesPlaceholderResolver`
+# [`PropertySourcesPlaceholderConfigurer`][1]
 * new in `3.1`
-* supersedes `PropertyPlaceholderResolver`
+* supersedes `PropertyPlaceholderConfigurer`
 * automatically resolves `${...}` placeholders via the `Environment`
 * used by default with `<context:property-placeholder/>`
 
+[1]: http://static.springsource.org/spring-framework/docs/3.1.x/javadoc-api/org/springframework/context/support/PropertySourcesPlaceholderConfigurer.html
+
+
 !SLIDE smaller
-# `PropertySourcesPlaceholderResolver`
+# `PropertySourcesPlaceholderConfigurer`
     @@@ xml
     <beans ...>
       <context:property-placeholder
@@ -111,7 +124,7 @@
     </beans>
 
 !SLIDE smaller
-# `PropertySourcesPlaceholderResolver`
+# `PropertySourcesPlaceholderConfigurer`
     @@@ xml
     <beans ...>
       <context:property-placeholder
@@ -933,14 +946,14 @@
     }
 
 !SLIDE small bullets
-* `@ComponentScan`
-* `@EnableAspectJAutoProxy`
-* `@EnableAsync`
-* `@EnableCaching`
-* `@EnableLoadTimeWeaving`
-* `@EnableSpringConfigured`
-* `@EnableTransactionManagement`
-* `@EnableWebMvc`
+* [`@ComponentScan`](http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/context/annotation/ComponentScan.html)
+* [`@EnableAspectJAutoProxy`](http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/context/annotation/EnableAspectJAutoProxy.html)
+* [`@EnableAsync`](http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/scheduling/annotation/EnableAsync.html)
+* [`@EnableCaching`](http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/annotation/EnableCaching.html)
+* [`@EnableLoadTimeWeaving`](http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/context/annotation/EnableLoadTimeWeaving.html)
+* [`@EnableSpringConfigured`](http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/beans/factory/aspectj/EnableSpringConfigured.html)
+* [`@EnableTransactionManagement`](http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/transaction/annotation/EnableTransactionManagement.html)
+* [`@EnableWebMvc`](http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/web/servlet/config/annotation/EnableWebMvc.html)
 
 !SLIDE small bullets incremental
 # design goals for `@Enable*` annotations
@@ -1090,11 +1103,13 @@
 # XML-free servlet container configuration
 
 !SLIDE incremental bullets
-# `WebApplicationInitializer`
+# [`WebApplicationInitializer`][1]
 * Spring 3.1 introduces `WebApplicationInitializer` API
 * builds on Servlet 3.0 `ServletContainerInitializer`
 * auto-detected on servlet container startup
 * eliminates need for `web.xml` entirely
+
+[1]: http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/web/WebApplicationInitializer.html
 
 !SLIDE smaller
 # traditional web.xml
@@ -1287,9 +1302,11 @@
     }
 
 !SLIDE incremental bullets
-# `LocalSessionFactoryBuilder`
+# [`LocalSessionFactoryBuilder`][1]
 * extends Hibernate&apos;s own `Configuration` class
 * only in the new `orm.hibernate4` package
+
+[1]: http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/orm/hibernate4/LocalSessionFactoryBuilder.html
 
 !SLIDE smaller
 # also...
@@ -1335,8 +1352,11 @@
 
 !SLIDE incremental bullets
 # key annotations
-* `@Cacheable`
-* `@CacheEvict`
+* [`@Cacheable`][1]
+* [`@CacheEvict`][2]
+
+[1]: http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/annotation/Cacheable.html
+[2]: http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/annotation/CacheEvict.html
 
 !SLIDE smaller
 
@@ -1352,13 +1372,18 @@
     }
 
 !SLIDE incremental bullets
-# `Cache` and `CacheManager` SPI
+# [`Cache`][1] and [`CacheManager`][2] SPI
 * in new `org.springframework.cache` package
+
+[1]: http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/CacheManager.html
+[2]: http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/Cache.html
 
 !SLIDE bullets incremental
 # enable caching support
 * with new `<cache:*>` XML namespace
-* or new `@EnableCaching` annotation
+* or new [`@EnableCaching`][1] annotation
+
+[1]: http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/annotation/EnableCaching.html
 
 !SLIDE smaller
 # `<cache:*>` namespace
