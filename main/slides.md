@@ -1689,8 +1689,11 @@
 
 !SLIDE bullets
 # Asynchronous request processing
-* sneak preview: [spring-mvc-async-sample](https://github.com/rstoyanchev/spring-mvc-async-sample)
+* sneak preview: [spring-mvc-chat][1]
 * follow [SPR-8517](https://jira.springsource.org/browse/SPR-8517)
+
+[1]: https://github.com/rstoyanchev/spring-mvc-chat
+
 
 !SLIDE subsection
 # Third-party libs and spec support
